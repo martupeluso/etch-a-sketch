@@ -22,11 +22,17 @@ function createGrid(squares = 16){
         div.style.width = (800 / squares) + "px";
 
         div.addEventListener("mouseenter", () => {
-            div.style.backgroundColor = "lightgreen";
+            div.style.backgroundColor = generateRandomHSLColor();
         })
     
         container.appendChild(div);
     }
+}
+
+function generateRandomHSLColor(){
+    const hue = Math.round((Math.random() * 360) + 1);
+    // Default saturation and light values are there to create a pastel-looking color!
+    return `hsl(${hue}, 100%, 80%)`;
 }
 
 createGrid();
