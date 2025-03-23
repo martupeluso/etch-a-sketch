@@ -10,22 +10,22 @@ button.addEventListener("click", () => {
     createGrid(squaresPerSide);
 })
 
-const container = document.querySelector(".container");
+const grid = document.querySelector(".grid");
 
 function createGrid(squares = 16){
-    container.textContent = "";
+    grid.textContent = "";
 
     for (let i = 0; i < (squares ** 2); i++){
         const div = document.createElement("div");
     
-        div.style.height = (800 / squares) + "px";
-        div.style.width = (800 / squares) + "px";
+        div.style.height = (750 / squares) + "px";
+        div.style.width = (750 / squares) + "px";
 
         div.addEventListener("mouseenter", () => {
             div.style.backgroundColor = generateRandomHSLColor();
         })
     
-        container.appendChild(div);
+        grid.appendChild(div);
     }
 }
 
